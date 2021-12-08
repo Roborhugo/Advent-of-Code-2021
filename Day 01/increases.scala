@@ -1,5 +1,9 @@
 package day01
 
+/** puzzleInput as a workable Vector[Int]*/
+val input: Vector[Int] = 
+  puzzleInput.split(' ').map(_.toInt).toVector
+
 /** Counts number of increases in a depth measurement */
 def countIncreases(depthMeasurements: Vector[Int]): Int = 
   var counter: Int = 0
