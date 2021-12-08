@@ -1,8 +1,9 @@
 package day01
 
 @main
-def start(file: String): Unit = 
-  println(countIncreases(input(file)))
+def start(filename: String): Unit = 
+  println(s"Singles: ${countIncreases(input(filename))}")
+  println(s"Triples: ${countIncreases(inputSlide3(filename))}")
 
 /** Input as a workable Vector[Int]*/
 def input(filename: String): Vector[Int] = 
@@ -10,6 +11,9 @@ def input(filename: String): Vector[Int] =
 
   val lines = for line <- Source.fromFile(filename).getLines yield line
   lines.toVector.map(_.toInt)
+
+def inputSlide3(filename: String): Vector[Int] = 
+  input(filename).sliding(3).toVector.map(_.sum)
 
 /** Counts number of increases in a depth measurement */
 def countIncreases(depthMeasurements: Vector[Int]): Int = 
