@@ -1,3 +1,5 @@
+package day01
+
 /** Raw input from puzzle in an immutable string.*/
 val puzzleInput = """193
 197
