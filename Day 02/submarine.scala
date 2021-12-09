@@ -1,7 +1,7 @@
 package day02
 
 /** Model of our submarine*/
-object Submarine:
+class Submarine: 
   var depth = 0
   var position = 0
 
@@ -19,21 +19,19 @@ object Submarine:
     depth += distance
 
 
-object AimedSubmarine:
-  var depth = 0
-  var position = 0
+class AimedSubmarine extends Submarine:
   var aim = 0
 
   /** Moves submarine distance steps forward and distance * */
-  def forward(distance: Int): Unit = 
+  override def forward(distance: Int): Unit = 
     position += distance
     depth += distance * aim
 
   /** Rotates submarine up by rotation*/
-  def up(rotation: Int): Unit = 
+  override def up(rotation: Int): Unit = 
     aim -= rotation
 
 
   /** Moves submarine distance steps down*/
-  def down(rotation: Int): Unit = 
+  override def down(rotation: Int): Unit = 
     aim += rotation
