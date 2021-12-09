@@ -18,6 +18,6 @@ def movement(course: Vector[(String, Int)]): Unit =
 def input(filename: String): Vector[(String, Int)] = 
   import scala.io.Source // To read from unput file
 
-  val lines: Vector[String] = for line <- Source.fromFile(filename).getLines yield line
+  val lines = for line <- Source.fromFile(filename).getLines yield line
   
-  lines.map(c => (c.split(' ')(0), c.split(' ')(1)))
+  lines.toVector.map(c => (c.split(' ')(0), c.split(' ')(1).toInt))
