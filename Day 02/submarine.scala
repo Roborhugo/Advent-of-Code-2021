@@ -6,14 +6,14 @@ object Submarine:
   var position = 0
 
   /** Moves submarine distance steps forward*/
-  def forward(distance: Int) = 
+  def forward(distance: Int): Unit = 
     position += distance
   
   /** Moves submarine distance steps up*/
-  def up(distance: Int) = 
+  def up(distance: Int): Unit = 
     depth -= distance
 
 
   /** Moves submarine distance steps down*/
-  def down(distance: Int) = 
+  def down(distance: Int): Unit = 
     depth += distance
