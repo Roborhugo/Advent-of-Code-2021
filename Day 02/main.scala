@@ -1,5 +1,12 @@
 package day02
 
+/** Starts program*/
+@main
+def main(filename: String) = 
+  movement(input(filename))
+
+  println(s"Final depth * position: ${Submarine.depth * Submarine.position}")
+
 /** Moves submarine using planned course (input) */
 def movement(course: Vector[(String, Int)]): Unit = 
   course.foreach(command => command._1 match
